@@ -1,6 +1,6 @@
 from collections import namedtuple
 import os,sys
-from housing.config.configuration import Configuartion
+from housing.config.configuration import Configuration
 from housing.exception import HousingException
 from housing.component.data_ingestion import DataIngestion
 from housing.entity.artifact_entity import  DataIngestionArtifact
@@ -8,9 +8,9 @@ from housing.entity.artifact_entity import  DataIngestionArtifact
 
 
 
-class Pipeline():
+class Pipeline:
 
-    def __init__(self, config: Configuartion ) -> None:
+    def __init__(self, config: Configuration= Configuration() ) -> None:
         try:
             self.config = config
         except Exception as e:
